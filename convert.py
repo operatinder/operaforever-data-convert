@@ -21,11 +21,18 @@ class Main(object):
         # persons
         pers_dict = dict()
         for _, pers_row in pers_df.iterrows():
-            pers_dict[pers_row['Label']] = dict()
-            if not pd.isnull(pers_row['Wikidata-Q']):
-                pers_dict[pers_row['Label']]['wikidata'] = 'https://entity.wikidata.org/{}'.format(pers_row['Wikidata-Q'])
+            label = pers_row['Label'].split(', ')
+            label.reverse()
+            label = ' '.join(label).title()
             if not pd.isnull(pers_row['Image']):
-                pers_dict[pers_row['Label']]['image_url'] = pers_row['Image']
+                img_url = pers_row['Image']
+            else:
+                img_url = None
+            if not pd.isnull(pers_row['Wikidata-Q']):
+                wikidata_uri = 'https://entity.wikidata.org/{}'.format(pers_row['Wikidata-Q'])
+            else:
+                wikidata_uri = None
+            pers_dict[label] = Artist(label, img_url, wikidata_uri)
 
         work = Work('Die Zauberflöte', 'Mozart')
         
@@ -48,6 +55,9 @@ class Main(object):
             _ = self.parse_seg(row, perf_dict)
 
         data = {}
+        data['artists'] = []
+        for _, a in pers_dict.items():
+            data['artists'].append(a.to_object())
         data['works'] = [work.to_object()]
 
         with open('export.json', 'w') as jsonfile:
@@ -67,6 +77,26 @@ class Main(object):
                             seg.add_artist(perf_dict[r].roles[role], role)
                 if r in perf_dict:
                     perf_dict[r].add_segment(seg)
+
+
+class Role(object):
+    def __init__(self, label:str):
+        self.label = label
+
+class Artist(object):
+    def __init__(self, label:str, img_url:str=None, wikidata_uri:str=None):
+        self.label = label
+        self.img_url = img_url
+        self.wikidata_uri = wikidata_uri
+
+    def to_object(self):
+        data = {}
+        data['label'] = self.label
+        if self.img_url:
+            data['img_url'] = self.img_url
+        if self.wikidata_uri:
+            data['wikidata_uri'] = self.wikidata_uri
+        return data
 
 class Segment(object):
     def __init__(self, id:int, type_:str, perf_id:str, recording:str = None, start:str = None, end:str = None):
@@ -108,6 +138,7 @@ class Performance(object):
         self.id = None
         self.venue = None
         self.date = None
+        self.cast = []
         self.segments = []
         self.roles = dict()
 
@@ -126,12 +157,19 @@ class Performance(object):
     def add_segment(self, segment:Segment):
         self.segments.append(segment)
 
+    def add_cast(self, role:Role):
+        self.cast.append(role)
+
     def to_object(self):
         data = {}
         if self.venue:
             data['venue'] = self.venue
         if self.date:
             data['date'] = self.date
+        if self.cast:
+            data['cast'] = []
+            for c in self.cast:
+                data['cast'].append(c.to_object())
         data['id'] = self.id
         data['recording'] = self.recording
         if self.segments:
