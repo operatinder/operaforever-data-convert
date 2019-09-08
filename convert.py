@@ -10,6 +10,7 @@ class Main(object):
         source = 'Zauberflöte Timestamps.xlsx'
         perf_df = pd.read_excel(source, 'Performances')
         cat_df = pd.read_excel(source, 'Catalogue Extract', converters={'dat': str})
+        cat_df['art'] = cat_df['art'].map(self.fix_name)
         tapeseg_df = pd.read_excel(source, 'Tapes-Segmentation')
         workseg_df = pd.read_excel(source, 'Zauberflöte-Segments')
         seg_df = workseg_df.join(tapeseg_df, lsuffix='_caller', rsuffix='_other')
@@ -17,13 +18,12 @@ class Main(object):
         seg_df.drop(columns=['Segment-Label_other'], inplace=True)
         roles_df = pd.read_excel(source, 'CharacterRoles')
         pers_df = pd.read_excel(source, 'Persons')
+        pers_df['Label'] = pers_df['Label'].map(self.fix_name)
         
         # persons
         pers_dict = dict()
         for _, pers_row in pers_df.iterrows():
-            label = pers_row['Label'].split(', ')
-            label.reverse()
-            label = ' '.join(label).title()
+            label = pers_row['Label']
             if not pd.isnull(pers_row['Image']):
                 img_url = pers_row['Image']
             else:
@@ -33,6 +33,25 @@ class Main(object):
             else:
                 wikidata_uri = None
             pers_dict[label] = Artist(label, img_url, wikidata_uri)
+
+        # roles
+        roles_dict = dict()
+        for _, roles_row in roles_df.iterrows():
+            roles_dict[roles_row['CharacterRole-ID']] = []
+            for r in re.split('\s*;\s*', roles_row['rol']):
+                label = r
+                wikidata_uri = None
+                group = None
+                if not pd.isnull(roles_row['Label']):
+                    label = roles_row['Label']
+                if not pd.isnull(pers_row['Wikidata-Q']):
+                    wikidata_uri = 'https://entity.wikidata.org/{}'.format(pers_row['Wikidata-Q'])
+                if r != roles_row['CharacterRole-ID']:
+                    group = roles_row['CharacterRole-ID']
+                role = Role(label, wikidata_uri, group)
+                roles_dict[roles_row['CharacterRole-ID']].append(role)
+                if label not in roles_dict:
+                    roles_dict[label] = [role]
 
         work = Work('Die Zauberflöte', 'Mozart')
         
@@ -46,13 +65,13 @@ class Main(object):
         for _, cat_row in cat_df.iterrows():
             if cat_row['WAV-Recording'] in perf_dict:
                 perf = perf_dict[cat_row['WAV-Recording']]
-                perf.parse_cat(cat_row)
+                perf.parse_cat(cat_row, roles_dict)
             else:
                 print(cat_row['WAV-Recording'], ' not found!')
 
         # segments
         for _, row in seg_df.iterrows():
-            _ = self.parse_seg(row, perf_dict)
+            _ = self.parse_seg(row, perf_dict, roles_dict)
 
         data = {}
         data['artists'] = []
@@ -63,7 +82,7 @@ class Main(object):
         with open('export.json', 'w') as jsonfile:
             jsonfile.write(simplejson.dumps(data, encoding='utf-8', indent=4, sort_keys=False))
 
-    def parse_seg(self, row, perf_dict):
+    def parse_seg(self, row, perf_dict, roles_dict):
         id = int(row['ID'])
         seg_type = row['Segment-Type']
         recordings = [k[:-6] for k in row.keys().values if k[-6:] == '-Begin']
@@ -71,17 +90,24 @@ class Main(object):
             if f'{r}-Begin' in row and not pd.isnull(row[f'{r}-Begin']) and f'{r}-End' in row and not pd.isnull(row[f'{r}-End']):
                 seg = Segment(id, seg_type, perf_dict[r].id, r, str(row[f'{r}-Begin']), str(row[f'{r}-End']))
                 if not pd.isnull(row['CharacterRoles']):
-                    seg.set_roles(row['CharacterRoles'])
+                    seg.set_roles(row['CharacterRoles'], roles_dict)
                     for role in re.split(';\s*', row['CharacterRoles']):
-                        if role in perf_dict[r].roles:
-                            seg.add_artist(perf_dict[r].roles[role], role)
+                        if role in perf_dict[r].roles_dict:
+                            seg.add_artist(perf_dict[r].roles_dict[role], role)
                 if r in perf_dict:
                     perf_dict[r].add_segment(seg)
 
+    def fix_name(self, name: str):
+        s = re.split('\s*,\s*', name)
+        s.reverse()
+        return ' '.join(s).title()
+
 
 class Role(object):
-    def __init__(self, label:str):
+    def __init__(self, label:str, wikidata_uri:str=None, group:str=None):
         self.label = label
+        self.wikidata_uri = wikidata_uri
+        self.group = group
 
 class Artist(object):
     def __init__(self, label:str, img_url:str=None, wikidata_uri:str=None):
@@ -102,7 +128,7 @@ class Segment(object):
     def __init__(self, id:int, type_:str, perf_id:str, recording:str = None, start:str = None, end:str = None):
         self.id = id
         self.type = type_
-        self.roles = None
+        self.roles = []
         self.artists = []
         if recording:
             track = re.search('(?<=Track)[0-9]+', recording).group(0)
@@ -111,8 +137,11 @@ class Segment(object):
             self.start = start
             self.end = end
     
-    def set_roles(self, roles):
-        self.roles = roles.replace(';', ',')
+    def set_roles(self, roles, roles_dict):
+        for r in re.split('\s*;\s*', roles):
+            if r in roles_dict:
+                for rr in roles_dict[r]:
+                    self.roles.append(rr.label)
 
     def add_artist(self, artist:str, role:str):
         self.artists.append(f'{artist} ({role})')
@@ -140,19 +169,18 @@ class Performance(object):
         self.date = None
         self.cast = []
         self.segments = []
-        self.roles = dict()
+        self.cast = dict()
+        self.roles_dict = dict()
 
     def get_recording(self):
         return self.recording
 
-    def parse_cat(self, cat_row):
+    def parse_cat(self, cat_row:pd.Series, roles_dict:dict):
         self.venue = cat_row['venue']
         self.date = cat_row['dat'][:10]
         self.id = cat_row['ide']
         if not pd.isnull(cat_row['rol']) and not pd.isnull(cat_row['art']):
-            artist = cat_row['art'].split(', ')
-            artist.reverse()
-            self.roles[cat_row['rol']] = ' '.join(artist).title()
+            self.cast[cat_row['rol']] = cat_row['art']
 
     def add_segment(self, segment:Segment):
         self.segments.append(segment)
@@ -168,8 +196,8 @@ class Performance(object):
             data['date'] = self.date
         if self.cast:
             data['cast'] = []
-            for c in self.cast:
-                data['cast'].append(c.to_object())
+            for r, a in self.cast.items():
+                data['cast'].append({r: a})
         data['id'] = self.id
         data['recording'] = self.recording
         if self.segments:
