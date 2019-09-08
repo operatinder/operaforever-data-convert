@@ -36,18 +36,17 @@ class Main(object):
         seg_df.drop(columns=['Segment-Label_other'], inplace=True)
         pers_df['Label'] = pers_df['Label'].map(self.fix_name)
         
+        work = Work('Die Zauberflöte', 'Mozart')
+
         # persons
         pers_dict = dict()
         for _, pers_row in pers_df.iterrows():
             label = pers_row['Label']
+            img_url, wikidata_uri = None, None
             if not pd.isnull(pers_row['Image']):
                 img_url = pers_row['Image']
-            else:
-                img_url = None
             if not pd.isnull(pers_row['Wikidata-Q']):
                 wikidata_uri = 'https://entity.wikidata.org/{}'.format(pers_row['Wikidata-Q'])
-            else:
-                wikidata_uri = None
             pers_dict[label] = Artist(label, img_url, wikidata_uri)
 
         # roles
@@ -56,8 +55,7 @@ class Main(object):
             roles_dict[roles_row['CharacterRole-ID']] = []
             for r in re.split('\s*;\s*', roles_row['rol']):
                 label = r
-                wikidata_uri = None
-                group = None
+                wikidata_uri, group = None, None
                 if not pd.isnull(roles_row['Label']):
                     label = roles_row['Label']
                 if not pd.isnull(pers_row['Wikidata-Q']):
@@ -68,9 +66,8 @@ class Main(object):
                 roles_dict[roles_row['CharacterRole-ID']].append(role)
                 if label not in roles_dict:
                     roles_dict[label] = [role]
+                work.add_role(role)
 
-        work = Work('Die Zauberflöte', 'Mozart')
-        
         # performances
         perf_dict = dict()
         for _, perf_row in perf_df.iterrows():
@@ -132,6 +129,16 @@ class Role(object):
         self.label = label
         self.wikidata_uri = wikidata_uri
         self.group = group
+
+    def to_object(self):
+        data = {}
+        data['label'] = self.label
+        if self.wikidata_uri:
+            data['wikidata_uri'] = self.wikidata_uri
+        if self.group:
+            data['group'] = self.group
+        return data
+
 
 class Artist(object):
     def __init__(self, label:str, img_url:str=None, wikidata_uri:str=None):
@@ -236,16 +243,24 @@ class Work(object):
     def __init__(self, title_:str, composer:str=None):
         self.title = title_
         self.composer = composer
+        self.roles = []
         self.performances = []
 
     def add_performance(self, performance:Performance):
         self.performances.append(performance)
+
+    def add_role(self, role:Role):
+        self.roles.append(role)
 
     def to_object(self):
         data = {}
         data['title'] = self.title
         if self.composer:
             data['composer'] = self.composer
+        if self.roles:            
+            data['roles'] = []
+            for r in self.roles:
+                data['roles'].append(r.to_object())
         if self.performances:            
             data['performances'] = []
             for p in self.performances:

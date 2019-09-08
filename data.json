@@ -128,6 +128,76 @@
         {
             "title": "Die Zauberflo\u0308te",
             "composer": "Mozart",
+            "roles": [
+                {
+                    "label": "Tamino",
+                    "wikidata_uri": "https://entity.wikidata.org/Q543293"
+                },
+                {
+                    "label": "Pamina",
+                    "wikidata_uri": "https://entity.wikidata.org/Q543293"
+                },
+                {
+                    "label": "Papageno",
+                    "wikidata_uri": "https://entity.wikidata.org/Q543293"
+                },
+                {
+                    "label": "Papagena",
+                    "wikidata_uri": "https://entity.wikidata.org/Q543293"
+                },
+                {
+                    "label": "Sarastro",
+                    "wikidata_uri": "https://entity.wikidata.org/Q543293"
+                },
+                {
+                    "label": "Queen of the Night",
+                    "wikidata_uri": "https://entity.wikidata.org/Q543293"
+                },
+                {
+                    "label": "Monostatos",
+                    "wikidata_uri": "https://entity.wikidata.org/Q543293"
+                },
+                {
+                    "label": "First Lady",
+                    "wikidata_uri": "https://entity.wikidata.org/Q543293",
+                    "group": "Three ladies"
+                },
+                {
+                    "label": "Second Lady",
+                    "wikidata_uri": "https://entity.wikidata.org/Q543293",
+                    "group": "Three ladies"
+                },
+                {
+                    "label": "Third Lady",
+                    "wikidata_uri": "https://entity.wikidata.org/Q543293",
+                    "group": "Three ladies"
+                },
+                {
+                    "label": "First Boy",
+                    "wikidata_uri": "https://entity.wikidata.org/Q543293",
+                    "group": "Three boys"
+                },
+                {
+                    "label": "Second Boy",
+                    "wikidata_uri": "https://entity.wikidata.org/Q543293",
+                    "group": "Three boys"
+                },
+                {
+                    "label": "Third Boy",
+                    "wikidata_uri": "https://entity.wikidata.org/Q543293",
+                    "group": "Three boys"
+                },
+                {
+                    "label": "First Armoured Man",
+                    "wikidata_uri": "https://entity.wikidata.org/Q543293",
+                    "group": "Two armoured men"
+                },
+                {
+                    "label": "Second Armoured Man",
+                    "wikidata_uri": "https://entity.wikidata.org/Q543293",
+                    "group": "Two armoured men"
+                }
+            ],
             "performances": [
                 {
                     "venue": "New York City Opera",
