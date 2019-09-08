@@ -3,21 +3,37 @@ import re
 import click
 import pandas as pd
 import simplejson
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 @click.command()
+@click.option('--source', default='Zauberflöte Timestamps.xlsx', help='local source spreadsheet, use "GoogleDoc" to use the online version')
+@click.option('--target', default='data.json', help='target JSON file')
 class Main(object):
-    def __init__(self):
-        source = 'Zauberflöte Timestamps.xlsx'
-        perf_df = pd.read_excel(source, 'Performances')
-        cat_df = pd.read_excel(source, 'Catalogue Extract', converters={'dat': str})
+    def __init__(self, source:str, target:str):
+        if source.lower() == 'googledoc':
+            scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+            credentials = ServiceAccountCredentials.from_json_keyfile_name('OperaForeverData-7c45f8590f8c.json', scope)
+            gc = gspread.authorize(credentials)
+            spreadsheet = gc.open_by_url('https://docs.google.com/spreadsheets/d/1kNxlphekMp2RfHPrZ0hg_f3gTCczspbaU9poTDQ-FgU/edit#gid=1976298026')
+            perf_df = self.get_google_sheet(spreadsheet, 0)
+            cat_df = self.get_google_sheet(spreadsheet, 1)
+            tapeseg_df = self.get_google_sheet(spreadsheet, 2)
+            workseg_df = self.get_google_sheet(spreadsheet, 3)
+            roles_df = self.get_google_sheet(spreadsheet, 4)
+            pers_df = self.get_google_sheet(spreadsheet, 5)
+        else:
+            perf_df = pd.read_excel(source, 'Performances')
+            cat_df = pd.read_excel(source, 'Catalogue Extract', converters={'dat': str})
+            tapeseg_df = pd.read_excel(source, 'Tapes-Segmentation')
+            workseg_df = pd.read_excel(source, 'Zauberflöte-Segments')
+            roles_df = pd.read_excel(source, 'CharacterRoles')
+            pers_df = pd.read_excel(source, 'Persons')
+
         cat_df['art'] = cat_df['art'].map(self.fix_name)
-        tapeseg_df = pd.read_excel(source, 'Tapes-Segmentation')
-        workseg_df = pd.read_excel(source, 'Zauberflöte-Segments')
         seg_df = workseg_df.join(tapeseg_df, lsuffix='_caller', rsuffix='_other')
         seg_df.rename(columns={'Segment-ID_caller': 'ID', 'Segment-Label_caller': 'Label'}, inplace=True)
         seg_df.drop(columns=['Segment-Label_other'], inplace=True)
-        roles_df = pd.read_excel(source, 'CharacterRoles')
-        pers_df = pd.read_excel(source, 'Persons')
         pers_df['Label'] = pers_df['Label'].map(self.fix_name)
         
         # persons
@@ -79,16 +95,17 @@ class Main(object):
             data['artists'].append(a.to_object())
         data['works'] = [work.to_object()]
 
-        with open('export.json', 'w') as jsonfile:
+        with open(target, 'w') as jsonfile:
             jsonfile.write(simplejson.dumps(data, encoding='utf-8', indent=4, sort_keys=False))
 
     def parse_seg(self, row, perf_dict, roles_dict):
         id = int(row['ID'])
+        label = row['Label']
         seg_type = row['Segment-Type']
         recordings = [k[:-6] for k in row.keys().values if k[-6:] == '-Begin']
         for r in recordings:
             if f'{r}-Begin' in row and not pd.isnull(row[f'{r}-Begin']) and f'{r}-End' in row and not pd.isnull(row[f'{r}-End']):
-                seg = Segment(id, seg_type, perf_dict[r].id, r, str(row[f'{r}-Begin']), str(row[f'{r}-End']))
+                seg = Segment(id, label, seg_type, perf_dict[r].id, r, str(row[f'{r}-Begin']), str(row[f'{r}-End']))
                 if not pd.isnull(row['CharacterRoles']):
                     seg.set_roles(row['CharacterRoles'], roles_dict)
                     for role in re.split(';\s*', row['CharacterRoles']):
@@ -96,6 +113,13 @@ class Main(object):
                             seg.add_artist(perf_dict[r].roles_dict[role], role)
                 if r in perf_dict:
                     perf_dict[r].add_segment(seg)
+
+    def get_google_sheet(self, spreadsheet:gspread.Spreadsheet, sheet:int):
+        worksheet = spreadsheet.get_worksheet(sheet)
+        data = worksheet.get_all_values()
+        headers = data.pop(0)
+        df = pd.DataFrame(data, columns=headers)
+        return df
 
     def fix_name(self, name: str):
         s = re.split('\s*,\s*', name)
@@ -125,15 +149,16 @@ class Artist(object):
         return data
 
 class Segment(object):
-    def __init__(self, id:int, type_:str, perf_id:str, recording:str = None, start:str = None, end:str = None):
+    def __init__(self, id:int, label:str, type_:str, perf_id:str, recording:str = None, start:str = None, end:str = None):
         self.id = id
+        self.label = label
         self.type = type_
         self.roles = []
         self.artists = []
         if recording:
             track = re.search('(?<=Track)[0-9]+', recording).group(0)
             channel = re.search('(?<=Channel)[0-9]+', recording).group(0)
-            self.audio_url = f'https://operatinder.s3.amazonaws.com/{perf_id}-T{str(track).zfill(3)}-C{channel}_Q5064_{str(self.id).zfill(2)}.mp3'
+            self.audio_url = f'https://operatinder.s3.amazonaws.com/{perf_id}-T{track}-C{channel}_Q5064_{str(self.id).zfill(2)}.mp3'
             self.start = start
             self.end = end
     
@@ -149,6 +174,7 @@ class Segment(object):
     def to_object(self):
         data = {}
         data['id'] = self.id
+        data['label'] = self.label
         data['type'] = self.type
         if self.roles:
             data['roles'] = self.roles
@@ -178,7 +204,7 @@ class Performance(object):
     def parse_cat(self, cat_row:pd.Series, roles_dict:dict):
         self.venue = cat_row['venue']
         self.date = cat_row['dat'][:10]
-        self.id = cat_row['ide']
+        self.id = '{}{}'.format(cat_row['ide'][:4], cat_row['ide'][4:].zfill(3))
         if not pd.isnull(cat_row['rol']) and not pd.isnull(cat_row['art']):
             self.cast[cat_row['rol']] = cat_row['art']
 
