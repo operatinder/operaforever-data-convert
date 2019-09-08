@@ -47,7 +47,7 @@ class Main(object):
             if not pd.isnull(pers_row['Image']):
                 img_url = pers_row['Image']
             if not pd.isnull(pers_row['Wikidata-Q']) and str(pers_row['Wikidata-Q']) != '':
-                wikidata_uri = 'https://entity.wikidata.org/{}'.format(pers_row['Wikidata-Q'])
+                wikidata_uri = 'http://entity.wikidata.org/{}'.format(pers_row['Wikidata-Q'])
             pers_dict[label] = Artist(label, img_url, wikidata_uri)
 
         # roles
@@ -60,7 +60,7 @@ class Main(object):
                 if not pd.isnull(roles_row['Label']) and str(roles_row['Label']) != '':
                     label = roles_row['Label']
                 if not pd.isnull(pers_row['Wikidata-Q']):
-                    wikidata_uri = 'https://entity.wikidata.org/{}'.format(pers_row['Wikidata-Q'])
+                    wikidata_uri = 'http://entity.wikidata.org/{}'.format(pers_row['Wikidata-Q'])
                 if r != roles_row['CharacterRole-ID']:
                     group = roles_row['CharacterRole-ID']
                 role = Role(label, wikidata_uri, group)
@@ -228,9 +228,6 @@ class Performance(object):
 
     def add_segment(self, segment:Segment):
         self.segments.append(segment)
-
-    def add_cast(self, role:Role):
-        self.cast.append(role)
 
     def to_object(self):
         data = {}
