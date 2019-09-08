@@ -107,7 +107,7 @@ class Segment(object):
         if recording:
             track = re.search('(?<=Track)[0-9]+', recording).group(0)
             channel = re.search('(?<=Channel)[0-9]+', recording).group(0)
-            self.audio_url = f'https://operatinder.s3.amazonaws.com/{perf_id}-T{track}-C{channel}_Q5064_{self.id}.mp3'
+            self.audio_url = f'https://operatinder.s3.amazonaws.com/{perf_id}-T{str(track).zfill(3)}-C{channel}_Q5064_{str(self.id).zfill(2)}.mp3'
             self.start = start
             self.end = end
     
