@@ -1,0 +1,873 @@
+{
+    "artists": [
+        {
+            "label": "Arleen Auger",
+            "img_url": "https://www.operamusica.com/media/cache/img_list/upload/image/5a/9e/68/5a9e68c46fba2.jpg",
+            "wikidata_uri": "https://entity.wikidata.org/Q272516"
+        },
+        {
+            "label": "Carol Bayard"
+        },
+        {
+            "label": "Barbara Blanchard"
+        },
+        {
+            "label": "Nico Castel",
+            "img_url": "https://i1.wp.com/the21stcenturyvoiceteacher.einerleipublishing.com/wp-content/uploads/2015/06/203196.jpg?resize=188%2C300",
+            "wikidata_uri": "https://entity.wikidata.org/Q7028767"
+        },
+        {
+            "label": "Lois Crane"
+        },
+        {
+            "label": "Loretta Di Franco",
+            "img_url": "http://lorettadifranco.com/images/lauretta.jpg",
+            "wikidata_uri": "https://entity.wikidata.org/Q22344313"
+        },
+        {
+            "label": "Enrico Di Giuseppe",
+            "img_url": "https://upload.wikimedia.org/wikipedia/en/8/83/Enrico_Di_Giuseppe.jpg",
+            "wikidata_uri": "https://entity.wikidata.org/Q3725737"
+        },
+        {
+            "label": "Jean Fenn",
+            "img_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Jean_Fenn_1956.JPG/457px-Jean_Fenn_1956.JPG",
+            "wikidata_uri": "https://entity.wikidata.org/Q6170652"
+        },
+        {
+            "label": "Paul Franke",
+            "img_url": "https://cdn.shopify.com/s/files/1/0257/3165/products/adp239.jpeg?v=1497475882",
+            "wikidata_uri": "https://entity.wikidata.org/Q7150719"
+        },
+        {
+            "label": "Richard Fredricks",
+            "img_url": "https://images-na.ssl-images-amazon.com/images/I/81CfAD6sNrL._SL1494_.jpg",
+            "wikidata_uri": "https://entity.wikidata.org/Q7325785"
+        },
+        {
+            "label": "Nicolai Gedda",
+            "img_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Nicolai_Gedda_1959.jpg",
+            "wikidata_uri": "https://entity.wikidata.org/Q446635"
+        },
+        {
+            "label": "Jerome Hines",
+            "img_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Jeromhinesportrait1958.jpg/440px-Jeromhinesportrait1958.jpg",
+            "wikidata_uri": "https://entity.wikidata.org/Q1093191"
+        },
+        {
+            "label": "John Lankston",
+            "img_url": "https://operawire.com/wp-content/uploads/2018/07/37070668_2000065446694904_9182856570969522176_n.jpg"
+        },
+        {
+            "label": "William Ledbetter"
+        },
+        {
+            "label": "Lucia Popp",
+            "img_url": "https://csoarchives.files.wordpress.com/2014/11/lucia-popp.jpg",
+            "wikidata_uri": "https://entity.wikidata.org/Q241014"
+        },
+        {
+            "label": "Hermann Prey",
+            "img_url": "https://www.bach-cantatas.com/Pic-Bio-P/Prey-Hermann-7.jpeg",
+            "wikidata_uri": "https://entity.wikidata.org/Q61080"
+        },
+        {
+            "label": "Arlene Randazzo",
+            "img_url": "http://www.arlenerandazzo.com/images/leonora.jpg"
+        },
+        {
+            "label": "Joaquin Romaguera",
+            "img_url": "https://vignette.wikia.nocookie.net/goldenthroats/images/3/3f/Joaquinromaguera.jpg",
+            "wikidata_uri": "https://entity.wikidata.org/Q27553655"
+        },
+        {
+            "label": "Will Roy"
+        },
+        {
+            "label": "John Stewart",
+            "img_url": "https://www.bach-cantatas.com/Pic-Bio-S/Stewart-John-Tenor-01[621].jpg",
+            "wikidata_uri": "https://entity.wikidata.org/Q1393453"
+        },
+        {
+            "label": "Veronica Tyler",
+            "img_url": "https://images-na.ssl-images-amazon.com/images/I/71pCPhf4z2L._SL1494_.jpg"
+        },
+        {
+            "label": "Patricia Wise",
+            "img_url": "https://www.picclickimg.com/d/l400/pict/372680913369_/1972-Press-Photo-Opera-singer-Patricia-Wise-poses.jpg",
+            "wikidata_uri": "https://entity.wikidata.org/Q61482877"
+        },
+        {
+            "label": "Teresa Zylis-Gara",
+            "img_url": "https://images-na.ssl-images-amazon.com/images/I/4112ro%2BtZpL.jpg",
+            "wikidata_uri": "https://entity.wikidata.org/Q515798"
+        },
+        {
+            "label": "Gustav Andreassen",
+            "img_url": "http://johnrpierce.com/andreassen_gustav.jpg"
+        },
+        {
+            "label": "Rodney Godshall",
+            "img_url": "https://www.opern-freund.de/fileadmin/_processed_/csm_Godshall_Rodney_c090a8f261.gif"
+        },
+        {
+            "label": "John Calvin West"
+        },
+        {
+            "label": "Hans Sotin",
+            "img_url": "https://www.bach-cantatas.com/Pic-Bio-S/Sotin-Hans-3.jpeg",
+            "wikidata_uri": "https://entity.wikidata.org/Q95787"
+        },
+        {
+            "label": "Ezio Pinza",
+            "img_url": "https://i.pinimg.com/236x/dc/49/b3/dc49b31ea46bfa4fa5cd4ab2dd243697.jpg",
+            "wikidata_uri": "https://entity.wikidata.org/Q543293"
+        }
+    ],
+    "works": [
+        {
+            "title": "Die Zauberflo\u0308te",
+            "composer": "Mozart",
+            "performances": [
+                {
+                    "venue": "New York City Opera",
+                    "date": "1969-03-16",
+                    "cast": [
+                        {
+                            "Queen": "Arleen Auger"
+                        },
+                        {
+                            "Papagena": "Barbara Blanchard"
+                        },
+                        {
+                            "First Lady": "Lois Crane"
+                        },
+                        {
+                            "Third Lady": "Beverly Evans"
+                        },
+                        {
+                            "Papageno": "William Ledbetter"
+                        },
+                        {
+                            "Monostatos": "Joaquin Romaguera"
+                        },
+                        {
+                            "Sarastro": "Will Roy"
+                        },
+                        {
+                            "Tamino": "John Stewart"
+                        },
+                        {
+                            "Pamina": "Veronica Tyler"
+                        },
+                        {
+                            "Second Lady": "Janet Winburn"
+                        }
+                    ],
+                    "id": "WAM-018",
+                    "recording": "NYCO-Tape18-Track1-Channel2",
+                    "segments": [
+                        {
+                            "id": 1,
+                            "label": "Overture",
+                            "type": "instrumental",
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-018-T1-C2_Q5064_01.mp3",
+                            "start": "00:02:07",
+                            "end": "00:08:50"
+                        },
+                        {
+                            "id": 2,
+                            "label": "Zu hilfe zu hilfe!",
+                            "type": "quartet",
+                            "roles": [
+                                "Tamino",
+                                "First Lady",
+                                "Second Lady",
+                                "Third Lady"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-018-T1-C2_Q5064_02.mp3",
+                            "start": "00:08:50",
+                            "end": "00:15:22"
+                        },
+                        {
+                            "id": 3,
+                            "label": "Wo bin ich? Ist es Phantasie",
+                            "type": "aria",
+                            "roles": [
+                                "Tamino"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-018-T1-C2_Q5064_03.mp3",
+                            "start": "00:15:29",
+                            "end": "00:15:37"
+                        },
+                        {
+                            "id": 4,
+                            "label": "Der Vogelf\u00e4nger bin ich ja",
+                            "type": "aria",
+                            "roles": [
+                                "Papageno"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-018-T1-C2_Q5064_04.mp3",
+                            "start": "00:15:38",
+                            "end": "00:18:06"
+                        },
+                        {
+                            "id": 5,
+                            "label": "He da! Was da!",
+                            "type": "recitative",
+                            "roles": [
+                                "Tamino",
+                                "Papageno"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-018-T1-C2_Q5064_05.mp3",
+                            "start": "00:18:09",
+                            "end": "00:20:34"
+                        },
+                        {
+                            "id": 6,
+                            "label": "Dies Bildnis ist bezaubernd sch\u00f6n",
+                            "type": "aria",
+                            "roles": [
+                                "Tamino"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-018-T1-C2_Q5064_06.mp3",
+                            "start": "00:20:36",
+                            "end": "00:24:28"
+                        },
+                        {
+                            "id": 7,
+                            "label": "Ruste dich mit Mut und Standhaftigkeit",
+                            "type": "recitative",
+                            "roles": [
+                                "Tamino",
+                                "First Lady",
+                                "Second Lady",
+                                "Third Lady"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-018-T1-C2_Q5064_07.mp3",
+                            "start": "00:24:28",
+                            "end": "00:24:50"
+                        },
+                        {
+                            "id": 15,
+                            "label": "Bei M\u00e4nnern welche Liebe f\u00fchlen",
+                            "type": "duet",
+                            "roles": [
+                                "Pamina",
+                                "Papageno"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-018-T1-C2_Q5064_15.mp3",
+                            "start": "00:39:12",
+                            "end": "00:42:21"
+                        },
+                        {
+                            "id": 16,
+                            "label": "Zum Ziele f\u00fchrt dich diese Bahn",
+                            "type": "quartet",
+                            "roles": [
+                                "Tamino",
+                                "First Boy",
+                                "Second Boy",
+                                "Third Boy"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-018-T1-C2_Q5064_16.mp3",
+                            "start": "00:42:26",
+                            "end": "00:44:11"
+                        },
+                        {
+                            "id": 44,
+                            "label": "O Isis und Osiris welche Wonne",
+                            "type": "choir",
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-018-T1-C2_Q5064_44.mp3",
+                            "start": "01:08:09",
+                            "end": "01:10:53"
+                        }
+                    ]
+                },
+                {
+                    "venue": "New York City Opera",
+                    "date": "1968-10-12",
+                    "cast": [
+                        {
+                            "First Lady": "Carol Bayard"
+                        },
+                        {
+                            "Monostatos": "Nico Castel"
+                        },
+                        {
+                            "Tamino": "Enrico Di Giuseppe"
+                        },
+                        {
+                            "Third Lady": "Beverly Evans"
+                        },
+                        {
+                            "Papageno": "Richard Fredricks"
+                        },
+                        {
+                            "First Priest": "John Lankston"
+                        },
+                        {
+                            "Queen": "Arlene Randazzo"
+                        },
+                        {
+                            "Sarastro": "Will Roy"
+                        },
+                        {
+                            "Pamina": "Veronica Tyler"
+                        },
+                        {
+                            "Papagena": "Patricia Wise"
+                        }
+                    ],
+                    "id": "WAM-019",
+                    "recording": "NYCO-Tape19-Track2-Channel1",
+                    "segments": [
+                        {
+                            "id": 1,
+                            "label": "Overture",
+                            "type": "instrumental",
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-019-T2-C1_Q5064_01.mp3",
+                            "start": "00:00:01",
+                            "end": "00:06:16"
+                        },
+                        {
+                            "id": 2,
+                            "label": "Zu hilfe zu hilfe!",
+                            "type": "quartet",
+                            "roles": [
+                                "Tamino",
+                                "First Lady",
+                                "Second Lady",
+                                "Third Lady"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-019-T2-C1_Q5064_02.mp3",
+                            "start": "00:06:20",
+                            "end": "00:12:34"
+                        },
+                        {
+                            "id": 3,
+                            "label": "Wo bin ich? Ist es Phantasie",
+                            "type": "aria",
+                            "roles": [
+                                "Tamino"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-019-T2-C1_Q5064_03.mp3",
+                            "start": "00:12:35",
+                            "end": "00:12:43"
+                        },
+                        {
+                            "id": 15,
+                            "label": "Bei M\u00e4nnern welche Liebe f\u00fchlen",
+                            "type": "duet",
+                            "roles": [
+                                "Pamina",
+                                "Papageno"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-019-T2-C1_Q5064_15.mp3",
+                            "start": "00:35:27",
+                            "end": "00:38:42"
+                        },
+                        {
+                            "id": 16,
+                            "label": "Zum Ziele f\u00fchrt dich diese Bahn",
+                            "type": "quartet",
+                            "roles": [
+                                "Tamino",
+                                "First Boy",
+                                "Second Boy",
+                                "Third Boy"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-019-T2-C1_Q5064_16.mp3",
+                            "start": "00:38:46",
+                            "end": "00:40:35"
+                        },
+                        {
+                            "id": 44,
+                            "label": "O Isis und Osiris welche Wonne",
+                            "type": "choir",
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-019-T2-C1_Q5064_44.mp3",
+                            "start": "01:04:16",
+                            "end": "01:06:53"
+                        }
+                    ]
+                },
+                {
+                    "venue": "Metropolitan Opera, New York",
+                    "date": "1970-01-17",
+                    "cast": [
+                        {
+                            "Speaker": "Walter Cassel"
+                        },
+                        {
+                            "Papagena": "Loretta Di Franco"
+                        },
+                        {
+                            "First Lady": "Jean Fenn"
+                        },
+                        {
+                            "Monostatos": "Paul Franke"
+                        },
+                        {
+                            "Tamino": "Nicolai Gedda"
+                        },
+                        {
+                            "Sarastro": "Jerome Hines"
+                        },
+                        {
+                            "Queen": "Lucia Popp"
+                        },
+                        {
+                            "Papageno": "Hermann Prey"
+                        },
+                        {
+                            "Pamina": "Teresa Zylis-Gara"
+                        }
+                    ],
+                    "id": "WAM-020",
+                    "recording": "NYCO-Tape20-Track2-Channel1",
+                    "segments": [
+                        {
+                            "id": 1,
+                            "label": "Overture",
+                            "type": "instrumental",
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-020-T2-C1_Q5064_01.mp3",
+                            "start": "00:00:00",
+                            "end": "00:06:47"
+                        },
+                        {
+                            "id": 2,
+                            "label": "Zu hilfe zu hilfe!",
+                            "type": "quartet",
+                            "roles": [
+                                "Tamino",
+                                "First Lady",
+                                "Second Lady",
+                                "Third Lady"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-020-T2-C1_Q5064_02.mp3",
+                            "start": "00:06:48",
+                            "end": "00:12:19"
+                        },
+                        {
+                            "id": 3,
+                            "label": "Wo bin ich? Ist es Phantasie",
+                            "type": "aria",
+                            "roles": [
+                                "Tamino"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-020-T2-C1_Q5064_03.mp3",
+                            "start": "00:12:24",
+                            "end": "00:12:40"
+                        },
+                        {
+                            "id": 4,
+                            "label": "Der Vogelf\u00e4nger bin ich ja",
+                            "type": "aria",
+                            "roles": [
+                                "Papageno"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-020-T2-C1_Q5064_04.mp3",
+                            "start": "00:12:39",
+                            "end": "00:15:06"
+                        },
+                        {
+                            "id": 5,
+                            "label": "He da! Was da!",
+                            "type": "recitative",
+                            "roles": [
+                                "Tamino",
+                                "Papageno"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-020-T2-C1_Q5064_05.mp3",
+                            "start": "00:15:13",
+                            "end": "00:18:30"
+                        },
+                        {
+                            "id": 6,
+                            "label": "Dies Bildnis ist bezaubernd sch\u00f6n",
+                            "type": "aria",
+                            "roles": [
+                                "Tamino"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-020-T2-C1_Q5064_06.mp3",
+                            "start": "00:18:31",
+                            "end": "00:22:41"
+                        },
+                        {
+                            "id": 7,
+                            "label": "Ruste dich mit Mut und Standhaftigkeit",
+                            "type": "recitative",
+                            "roles": [
+                                "Tamino",
+                                "First Lady",
+                                "Second Lady",
+                                "Third Lady"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-020-T2-C1_Q5064_07.mp3",
+                            "start": "00:22:43",
+                            "end": "00:23:23"
+                        },
+                        {
+                            "id": 8,
+                            "label": "O zittre nicht mein lieber Sohn",
+                            "type": "recitative,aria",
+                            "roles": [
+                                "Queen of the Night"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-020-T2-C1_Q5064_08.mp3",
+                            "start": "00:23:23",
+                            "end": "00:24:30"
+                        },
+                        {
+                            "id": 9,
+                            "label": "Zum Leiden bin ich auserkoren",
+                            "type": "aria",
+                            "roles": [
+                                "Queen of the Night"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-020-T2-C1_Q5064_09.mp3",
+                            "start": "00:24:31",
+                            "end": "00:28:02"
+                        },
+                        {
+                            "id": 10,
+                            "label": "Ist es denn auch Wirklichkeit",
+                            "type": "recitative",
+                            "roles": [
+                                "Tamino"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-020-T2-C1_Q5064_10.mp3",
+                            "start": "00:28:04",
+                            "end": "00:28:10"
+                        },
+                        {
+                            "id": 11,
+                            "label": "Hm! hm! hm! hm!",
+                            "type": "quintet",
+                            "roles": [
+                                "Papageno",
+                                "Tamino",
+                                "First Lady",
+                                "Second Lady",
+                                "Third Lady"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-020-T2-C1_Q5064_11.mp3",
+                            "start": "00:28:10",
+                            "end": "00:33:45"
+                        },
+                        {
+                            "id": 13,
+                            "label": "Du feines Taubchen nur herein",
+                            "type": "trio",
+                            "roles": [
+                                "Pamina",
+                                "Monostatos",
+                                "Papageno"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-020-T2-C1_Q5064_13.mp3",
+                            "start": "00:34:02",
+                            "end": "00:35:43"
+                        },
+                        {
+                            "id": 14,
+                            "label": "Mutter Mutter!",
+                            "type": "recitative",
+                            "roles": [
+                                "Pamina",
+                                "Papageno"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-020-T2-C1_Q5064_14.mp3",
+                            "start": "00:35:44",
+                            "end": "00:38:04"
+                        },
+                        {
+                            "id": 15,
+                            "label": "Bei M\u00e4nnern welche Liebe f\u00fchlen",
+                            "type": "duet",
+                            "roles": [
+                                "Pamina",
+                                "Papageno"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-020-T2-C1_Q5064_15.mp3",
+                            "start": "00:38:05",
+                            "end": "00:41:20"
+                        },
+                        {
+                            "id": 16,
+                            "label": "Zum Ziele f\u00fchrt dich diese Bahn",
+                            "type": "quartet",
+                            "roles": [
+                                "Tamino",
+                                "First Boy",
+                                "Second Boy",
+                                "Third Boy"
+                            ],
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-020-T2-C1_Q5064_16.mp3",
+                            "start": "00:41:34",
+                            "end": "00:43:08"
+                        },
+                        {
+                            "id": 44,
+                            "label": "O Isis und Osiris welche Wonne",
+                            "type": "choir",
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-020-T2-C1_Q5064_44.mp3",
+                            "start": "01:08:38",
+                            "end": "01:11:42"
+                        }
+                    ]
+                },
+                {
+                    "venue": "New York City Opera",
+                    "date": "1987-08-19",
+                    "cast": [
+                        {
+                            "Second Priest": "James Billings"
+                        },
+                        {
+                            "Papageno": "Stephen Dickson"
+                        },
+                        {
+                            "Sprecher": "Harry Dworchak"
+                        },
+                        {
+                            "Pamina": "Faith Esham"
+                        },
+                        {
+                            "Tamino": "Jon Garrison"
+                        },
+                        {
+                            "Sarastro": "Rodney Godshall"
+                        },
+                        {
+                            "Queen": "Rachel Rosales"
+                        },
+                        {
+                            "Monostatos": "Jerold Siena"
+                        }
+                    ],
+                    "id": "WAM-056",
+                    "recording": "NYCO-Tape56-Track1-Channel1",
+                    "segments": [
+                        {
+                            "id": 44,
+                            "label": "O Isis und Osiris welche Wonne",
+                            "type": "choir",
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-056-T1-C1_Q5064_44.mp3",
+                            "start": "02:45:52",
+                            "end": "02:48:30"
+                        }
+                    ]
+                },
+                {
+                    "venue": "New York City Opera",
+                    "date": "1992-10-08",
+                    "cast": [
+                        {
+                            "First Priest": "Peter Blanchet"
+                        },
+                        {
+                            "Pamina": "Amy Burton"
+                        },
+                        {
+                            "Speaker": "Philip Cokorinos"
+                        },
+                        {
+                            "Tamino": "Richard Drews"
+                        },
+                        {
+                            "Monostatos": "Jonathan Green"
+                        },
+                        {
+                            "Papageno": "Jeff Mattsey"
+                        },
+                        {
+                            "Second Lady": "Susanne Marsee"
+                        },
+                        {
+                            "Queen": "Rachel Rosales"
+                        },
+                        {
+                            "Papagena": "Susan Wallin"
+                        },
+                        {
+                            "First Lady": "Nina Warren"
+                        },
+                        {
+                            "Sarastro": "John Calvin West"
+                        }
+                    ],
+                    "id": "WAM-076",
+                    "recording": "NYCO-Tape76-Track1-Channel2",
+                    "segments": [
+                        {
+                            "id": 44,
+                            "label": "O Isis und Osiris welche Wonne",
+                            "type": "choir",
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-076-T1-C2_Q5064_44.mp3",
+                            "start": "01:15:46",
+                            "end": "01:18:41"
+                        }
+                    ]
+                },
+                {
+                    "venue": "Metropolitan Opera, New York",
+                    "date": "1993-10-14",
+                    "cast": [
+                        {
+                            "First Armoured Man": "Mark W. Baker"
+                        },
+                        {
+                            "Second Lady": "Jane Bunnell"
+                        },
+                        {
+                            "Queen": "Elizabeth Carter"
+                        },
+                        {
+                            "Third Lady": "Judith Christin"
+                        },
+                        {
+                            "First Priest": "James Courtney"
+                        },
+                        {
+                            "Pamina": "Joyce Guyer (-Hiller)"
+                        },
+                        {
+                            "Monostatos": "Anthony Laciura"
+                        },
+                        {
+                            "Tamino": "Frank Lopardo"
+                        },
+                        {
+                            "Papageno": "Mark Oswald"
+                        },
+                        {
+                            "Sarastro": "Hans Sotin"
+                        },
+                        {
+                            "Sprecher": "Thomas Stewart"
+                        },
+                        {
+                            "Papagena": "Korliss Uecker"
+                        },
+                        {
+                            "Second Armoured Man": "Richard Vernon"
+                        }
+                    ],
+                    "id": "WAM-079",
+                    "recording": "NYCO-Tape79-Track1-Channel1",
+                    "segments": [
+                        {
+                            "id": 44,
+                            "label": "O Isis und Osiris welche Wonne",
+                            "type": "choir",
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-079-T1-C1_Q5064_44.mp3",
+                            "start": "01:09:32",
+                            "end": "01:12:05"
+                        }
+                    ]
+                },
+                {
+                    "venue": "Metropolitan Opera, New York",
+                    "date": "1942-12-26",
+                    "cast": [
+                        {
+                            "Queen": "Josephine Antoine"
+                        },
+                        {
+                            "Speaker": "Norman Cordon"
+                        },
+                        {
+                            "First Armoured Man": "Emery Darcy"
+                        },
+                        {
+                            "First Genie": "Marita Farell"
+                        },
+                        {
+                            "Monostatos": "John Garris"
+                        },
+                        {
+                            "Second Armoured Man": "John Gurney"
+                        },
+                        {
+                            "Third Lady": "Anna Kaskas"
+                        },
+                        {
+                            "Tamino": "Charles Kullman"
+                        },
+                        {
+                            "Pamina": "Eleanor Steber"
+                        },
+                        {
+                            "Third Genie": "Helen Olheim"
+                        },
+                        {
+                            "Second Lady": "Mona Paulee"
+                        },
+                        {
+                            "Sarastro": "Ezio Pinza"
+                        },
+                        {
+                            "Papagena": "Lillian Raymondi"
+                        }
+                    ],
+                    "id": "WAM-079",
+                    "recording": "NYCO-Tape79-Track1-Channel2",
+                    "segments": [
+                        {
+                            "id": 44,
+                            "label": "O Isis und Osiris welche Wonne",
+                            "type": "choir",
+                            "audio_url": "https://operatinder.s3.amazonaws.com/WAM-079-T1-C2_Q5064_44.mp3",
+                            "start": "01:10:40",
+                            "end": "01:13:56"
+                        }
+                    ]
+                },
+                {
+                    "venue": "New York City Opera",
+                    "date": "2003-10-07",
+                    "cast": [
+                        {
+                            "Sarastro": "Gustav Andreassen"
+                        },
+                        {
+                            "Monostatos": "Dean Anthony"
+                        },
+                        {
+                            "Pamina": "Jennifer Aylmer"
+                        },
+                        {
+                            "First Lady": "Jennifer Coleman"
+                        },
+                        {
+                            "Papageno": "Philip Cutlip"
+                        },
+                        {
+                            "First Priest": "William Ferguson"
+                        },
+                        {
+                            "Second Lady": "Kathryn Friest"
+                        },
+                        {
+                            "Third Lady": "Jennifer Hines"
+                        },
+                        {
+                            "Second Priest": "William Ledbetter"
+                        },
+                        {
+                            "Tamino": "John Mc Veigh"
+                        },
+                        {
+                            "Queen": "Amanda Pabyan"
+                        },
+                        {
+                            "Speaker": "Sanford Sylvan"
+                        }
+                    ],
+                    "id": "WAM-100",
+                    "recording": "NYCO-Tape100-Track2-Channel2"
+                }
+            ]
+        }
+    ]
+}

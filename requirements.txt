@@ -1,0 +1,6 @@
+click==6.7
+gspread==3.1.0
+oauth2client==4.1.3
+pandas==0.23.4
+regex==2019.8.19
+simplejson==3.16.0
