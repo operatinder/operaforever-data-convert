@@ -30,6 +30,7 @@ class Main(object):
             roles_df = pd.read_excel(source, 'CharacterRoles')
             pers_df = pd.read_excel(source, 'Persons')
 
+        # cleaning up
         cat_df['art'] = cat_df['art'].map(self.fix_name)
         seg_df = workseg_df.join(tapeseg_df, lsuffix='_caller', rsuffix='_other')
         seg_df.rename(columns={'Segment-ID_caller': 'ID', 'Segment-Label_caller': 'Label'}, inplace=True)
@@ -45,7 +46,7 @@ class Main(object):
             img_url, wikidata_uri = None, None
             if not pd.isnull(pers_row['Image']):
                 img_url = pers_row['Image']
-            if not pd.isnull(pers_row['Wikidata-Q']):
+            if not pd.isnull(pers_row['Wikidata-Q']) and str(pers_row['Wikidata-Q']) != '':
                 wikidata_uri = 'https://entity.wikidata.org/{}'.format(pers_row['Wikidata-Q'])
             pers_dict[label] = Artist(label, img_url, wikidata_uri)
 
@@ -56,7 +57,7 @@ class Main(object):
             for r in re.split('\s*;\s*', roles_row['rol']):
                 label = r
                 wikidata_uri, group = None, None
-                if not pd.isnull(roles_row['Label']):
+                if not pd.isnull(roles_row['Label']) and str(roles_row['Label']) != '':
                     label = roles_row['Label']
                 if not pd.isnull(pers_row['Wikidata-Q']):
                     wikidata_uri = 'https://entity.wikidata.org/{}'.format(pers_row['Wikidata-Q'])
@@ -101,8 +102,9 @@ class Main(object):
         seg_type = row['Segment-Type']
         recordings = [k[:-6] for k in row.keys().values if k[-6:] == '-Begin']
         for r in recordings:
-            if f'{r}-Begin' in row and not pd.isnull(row[f'{r}-Begin']) and f'{r}-End' in row and not pd.isnull(row[f'{r}-End']):
-                seg = Segment(id, label, seg_type, perf_dict[r].id, r, str(row[f'{r}-Begin']), str(row[f'{r}-End']))
+            start_tc, end_tc = self.get_start_end(row[f'{r}-Begin'], row[f'{r}-End'])
+            if start_tc and end_tc:
+                seg = Segment(id, label, seg_type, perf_dict[r].id, r, start_tc, end_tc)
                 if not pd.isnull(row['CharacterRoles']):
                     seg.set_roles(row['CharacterRoles'], roles_dict)
                     for role in re.split(';\s*', row['CharacterRoles']):
@@ -122,6 +124,16 @@ class Main(object):
         s = re.split('\s*,\s*', name)
         s.reverse()
         return ' '.join(s).title()
+
+    def get_start_end(self, start_field, end_field):
+        start, end = None, None
+        start_search = re.search('\d{2}:\d{2}:\d{2}', str(start_field))
+        if start_search:
+            start = start_search.group(0)
+        end_search = re.search('\d{2}:\d{2}:\d{2}', str(end_field))
+        if end_search:
+            end = end_search.group(0)
+        return start, end
 
 
 class Role(object):
@@ -200,9 +212,8 @@ class Performance(object):
         self.id = None
         self.venue = None
         self.date = None
-        self.cast = []
-        self.segments = []
         self.cast = dict()
+        self.segments = []
         self.roles_dict = dict()
 
     def get_recording(self):
@@ -212,7 +223,7 @@ class Performance(object):
         self.venue = cat_row['venue']
         self.date = cat_row['dat'][:10]
         self.id = '{}{}'.format(cat_row['ide'][:4], cat_row['ide'][4:].zfill(3))
-        if not pd.isnull(cat_row['rol']) and not pd.isnull(cat_row['art']):
+        if not pd.isnull(cat_row['rol']) and str(cat_row['rol']) != '' and not pd.isnull(cat_row['art']) and str(cat_row['art']) != '':
             self.cast[cat_row['rol']] = cat_row['art']
 
     def add_segment(self, segment:Segment):
@@ -229,7 +240,6 @@ class Performance(object):
             data['date'] = self.date
         if self.cast:
             data['cast'] = []
-            count = 0
             for r, a in self.cast.items():
                 data['cast'].append({'role': r, 'artist': a})
         data['id'] = self.id
