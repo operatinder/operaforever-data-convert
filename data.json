@@ -204,34 +204,44 @@
                     "date": "1969-03-16",
                     "cast": [
                         {
-                            "Queen": "Arleen Auger"
+                            "role": "Queen",
+                            "artist": "Arleen Auger"
                         },
                         {
-                            "Papagena": "Barbara Blanchard"
+                            "role": "Papagena",
+                            "artist": "Barbara Blanchard"
                         },
                         {
-                            "First Lady": "Lois Crane"
+                            "role": "First Lady",
+                            "artist": "Lois Crane"
                         },
                         {
-                            "Third Lady": "Beverly Evans"
+                            "role": "Third Lady",
+                            "artist": "Beverly Evans"
                         },
                         {
-                            "Papageno": "William Ledbetter"
+                            "role": "Papageno",
+                            "artist": "William Ledbetter"
                         },
                         {
-                            "Monostatos": "Joaquin Romaguera"
+                            "role": "Monostatos",
+                            "artist": "Joaquin Romaguera"
                         },
                         {
-                            "Sarastro": "Will Roy"
+                            "role": "Sarastro",
+                            "artist": "Will Roy"
                         },
                         {
-                            "Tamino": "John Stewart"
+                            "role": "Tamino",
+                            "artist": "John Stewart"
                         },
                         {
-                            "Pamina": "Veronica Tyler"
+                            "role": "Pamina",
+                            "artist": "Veronica Tyler"
                         },
                         {
-                            "Second Lady": "Janet Winburn"
+                            "role": "Second Lady",
+                            "artist": "Janet Winburn"
                         }
                     ],
                     "id": "WAM-018",
@@ -359,34 +369,44 @@
                     "date": "1968-10-12",
                     "cast": [
                         {
-                            "First Lady": "Carol Bayard"
+                            "role": "First Lady",
+                            "artist": "Carol Bayard"
                         },
                         {
-                            "Monostatos": "Nico Castel"
+                            "role": "Monostatos",
+                            "artist": "Nico Castel"
                         },
                         {
-                            "Tamino": "Enrico Di Giuseppe"
+                            "role": "Tamino",
+                            "artist": "Enrico Di Giuseppe"
                         },
                         {
-                            "Third Lady": "Beverly Evans"
+                            "role": "Third Lady",
+                            "artist": "Beverly Evans"
                         },
                         {
-                            "Papageno": "Richard Fredricks"
+                            "role": "Papageno",
+                            "artist": "Richard Fredricks"
                         },
                         {
-                            "First Priest": "John Lankston"
+                            "role": "First Priest",
+                            "artist": "John Lankston"
                         },
                         {
-                            "Queen": "Arlene Randazzo"
+                            "role": "Queen",
+                            "artist": "Arlene Randazzo"
                         },
                         {
-                            "Sarastro": "Will Roy"
+                            "role": "Sarastro",
+                            "artist": "Will Roy"
                         },
                         {
-                            "Pamina": "Veronica Tyler"
+                            "role": "Pamina",
+                            "artist": "Veronica Tyler"
                         },
                         {
-                            "Papagena": "Patricia Wise"
+                            "role": "Papagena",
+                            "artist": "Patricia Wise"
                         }
                     ],
                     "id": "WAM-019",
@@ -466,31 +486,40 @@
                     "date": "1970-01-17",
                     "cast": [
                         {
-                            "Speaker": "Walter Cassel"
+                            "role": "Speaker",
+                            "artist": "Walter Cassel"
                         },
                         {
-                            "Papagena": "Loretta Di Franco"
+                            "role": "Papagena",
+                            "artist": "Loretta Di Franco"
                         },
                         {
-                            "First Lady": "Jean Fenn"
+                            "role": "First Lady",
+                            "artist": "Jean Fenn"
                         },
                         {
-                            "Monostatos": "Paul Franke"
+                            "role": "Monostatos",
+                            "artist": "Paul Franke"
                         },
                         {
-                            "Tamino": "Nicolai Gedda"
+                            "role": "Tamino",
+                            "artist": "Nicolai Gedda"
                         },
                         {
-                            "Sarastro": "Jerome Hines"
+                            "role": "Sarastro",
+                            "artist": "Jerome Hines"
                         },
                         {
-                            "Queen": "Lucia Popp"
+                            "role": "Queen",
+                            "artist": "Lucia Popp"
                         },
                         {
-                            "Papageno": "Hermann Prey"
+                            "role": "Papageno",
+                            "artist": "Hermann Prey"
                         },
                         {
-                            "Pamina": "Teresa Zylis-Gara"
+                            "role": "Pamina",
+                            "artist": "Teresa Zylis-Gara"
                         }
                     ],
                     "id": "WAM-020",
@@ -691,28 +720,36 @@
                     "date": "1987-08-19",
                     "cast": [
                         {
-                            "Second Priest": "James Billings"
+                            "role": "Second Priest",
+                            "artist": "James Billings"
                         },
                         {
-                            "Papageno": "Stephen Dickson"
+                            "role": "Papageno",
+                            "artist": "Stephen Dickson"
                         },
                         {
-                            "Sprecher": "Harry Dworchak"
+                            "role": "Sprecher",
+                            "artist": "Harry Dworchak"
                         },
                         {
-                            "Pamina": "Faith Esham"
+                            "role": "Pamina",
+                            "artist": "Faith Esham"
                         },
                         {
-                            "Tamino": "Jon Garrison"
+                            "role": "Tamino",
+                            "artist": "Jon Garrison"
                         },
                         {
-                            "Sarastro": "Rodney Godshall"
+                            "role": "Sarastro",
+                            "artist": "Rodney Godshall"
                         },
                         {
-                            "Queen": "Rachel Rosales"
+                            "role": "Queen",
+                            "artist": "Rachel Rosales"
                         },
                         {
-                            "Monostatos": "Jerold Siena"
+                            "role": "Monostatos",
+                            "artist": "Jerold Siena"
                         }
                     ],
                     "id": "WAM-056",
@@ -733,37 +770,48 @@
                     "date": "1992-10-08",
                     "cast": [
                         {
-                            "First Priest": "Peter Blanchet"
+                            "role": "First Priest",
+                            "artist": "Peter Blanchet"
                         },
                         {
-                            "Pamina": "Amy Burton"
+                            "role": "Pamina",
+                            "artist": "Amy Burton"
                         },
                         {
-                            "Speaker": "Philip Cokorinos"
+                            "role": "Speaker",
+                            "artist": "Philip Cokorinos"
                         },
                         {
-                            "Tamino": "Richard Drews"
+                            "role": "Tamino",
+                            "artist": "Richard Drews"
                         },
                         {
-                            "Monostatos": "Jonathan Green"
+                            "role": "Monostatos",
+                            "artist": "Jonathan Green"
                         },
                         {
-                            "Papageno": "Jeff Mattsey"
+                            "role": "Papageno",
+                            "artist": "Jeff Mattsey"
                         },
                         {
-                            "Second Lady": "Susanne Marsee"
+                            "role": "Second Lady",
+                            "artist": "Susanne Marsee"
                         },
                         {
-                            "Queen": "Rachel Rosales"
+                            "role": "Queen",
+                            "artist": "Rachel Rosales"
                         },
                         {
-                            "Papagena": "Susan Wallin"
+                            "role": "Papagena",
+                            "artist": "Susan Wallin"
                         },
                         {
-                            "First Lady": "Nina Warren"
+                            "role": "First Lady",
+                            "artist": "Nina Warren"
                         },
                         {
-                            "Sarastro": "John Calvin West"
+                            "role": "Sarastro",
+                            "artist": "John Calvin West"
                         }
                     ],
                     "id": "WAM-076",
@@ -784,43 +832,56 @@
                     "date": "1993-10-14",
                     "cast": [
                         {
-                            "First Armoured Man": "Mark W. Baker"
+                            "role": "First Armoured Man",
+                            "artist": "Mark W. Baker"
                         },
                         {
-                            "Second Lady": "Jane Bunnell"
+                            "role": "Second Lady",
+                            "artist": "Jane Bunnell"
                         },
                         {
-                            "Queen": "Elizabeth Carter"
+                            "role": "Queen",
+                            "artist": "Elizabeth Carter"
                         },
                         {
-                            "Third Lady": "Judith Christin"
+                            "role": "Third Lady",
+                            "artist": "Judith Christin"
                         },
                         {
-                            "First Priest": "James Courtney"
+                            "role": "First Priest",
+                            "artist": "James Courtney"
                         },
                         {
-                            "Pamina": "Joyce Guyer (-Hiller)"
+                            "role": "Pamina",
+                            "artist": "Joyce Guyer (-Hiller)"
                         },
                         {
-                            "Monostatos": "Anthony Laciura"
+                            "role": "Monostatos",
+                            "artist": "Anthony Laciura"
                         },
                         {
-                            "Tamino": "Frank Lopardo"
+                            "role": "Tamino",
+                            "artist": "Frank Lopardo"
                         },
                         {
-                            "Papageno": "Mark Oswald"
+                            "role": "Papageno",
+                            "artist": "Mark Oswald"
                         },
                         {
-                            "Sarastro": "Hans Sotin"
+                            "role": "Sarastro",
+                            "artist": "Hans Sotin"
                         },
                         {
-                            "Sprecher": "Thomas Stewart"
+                            "role": "Sprecher",
+                            "artist": "Thomas Stewart"
                         },
                         {
-                            "Papagena": "Korliss Uecker"
+                            "role": "Papagena",
+                            "artist": "Korliss Uecker"
                         },
                         {
-                            "Second Armoured Man": "Richard Vernon"
+                            "role": "Second Armoured Man",
+                            "artist": "Richard Vernon"
                         }
                     ],
                     "id": "WAM-079",
@@ -841,43 +902,56 @@
                     "date": "1942-12-26",
                     "cast": [
                         {
-                            "Queen": "Josephine Antoine"
+                            "role": "Queen",
+                            "artist": "Josephine Antoine"
                         },
                         {
-                            "Speaker": "Norman Cordon"
+                            "role": "Speaker",
+                            "artist": "Norman Cordon"
                         },
                         {
-                            "First Armoured Man": "Emery Darcy"
+                            "role": "First Armoured Man",
+                            "artist": "Emery Darcy"
                         },
                         {
-                            "First Genie": "Marita Farell"
+                            "role": "First Genie",
+                            "artist": "Marita Farell"
                         },
                         {
-                            "Monostatos": "John Garris"
+                            "role": "Monostatos",
+                            "artist": "John Garris"
                         },
                         {
-                            "Second Armoured Man": "John Gurney"
+                            "role": "Second Armoured Man",
+                            "artist": "John Gurney"
                         },
                         {
-                            "Third Lady": "Anna Kaskas"
+                            "role": "Third Lady",
+                            "artist": "Anna Kaskas"
                         },
                         {
-                            "Tamino": "Charles Kullman"
+                            "role": "Tamino",
+                            "artist": "Charles Kullman"
                         },
                         {
-                            "Pamina": "Eleanor Steber"
+                            "role": "Pamina",
+                            "artist": "Eleanor Steber"
                         },
                         {
-                            "Third Genie": "Helen Olheim"
+                            "role": "Third Genie",
+                            "artist": "Helen Olheim"
                         },
                         {
-                            "Second Lady": "Mona Paulee"
+                            "role": "Second Lady",
+                            "artist": "Mona Paulee"
                         },
                         {
-                            "Sarastro": "Ezio Pinza"
+                            "role": "Sarastro",
+                            "artist": "Ezio Pinza"
                         },
                         {
-                            "Papagena": "Lillian Raymondi"
+                            "role": "Papagena",
+                            "artist": "Lillian Raymondi"
                         }
                     ],
                     "id": "WAM-079",
@@ -898,40 +972,52 @@
                     "date": "2003-10-07",
                     "cast": [
                         {
-                            "Sarastro": "Gustav Andreassen"
+                            "role": "Sarastro",
+                            "artist": "Gustav Andreassen"
                         },
                         {
-                            "Monostatos": "Dean Anthony"
+                            "role": "Monostatos",
+                            "artist": "Dean Anthony"
                         },
                         {
-                            "Pamina": "Jennifer Aylmer"
+                            "role": "Pamina",
+                            "artist": "Jennifer Aylmer"
                         },
                         {
-                            "First Lady": "Jennifer Coleman"
+                            "role": "First Lady",
+                            "artist": "Jennifer Coleman"
                         },
                         {
-                            "Papageno": "Philip Cutlip"
+                            "role": "Papageno",
+                            "artist": "Philip Cutlip"
                         },
                         {
-                            "First Priest": "William Ferguson"
+                            "role": "First Priest",
+                            "artist": "William Ferguson"
                         },
                         {
-                            "Second Lady": "Kathryn Friest"
+                            "role": "Second Lady",
+                            "artist": "Kathryn Friest"
                         },
                         {
-                            "Third Lady": "Jennifer Hines"
+                            "role": "Third Lady",
+                            "artist": "Jennifer Hines"
                         },
                         {
-                            "Second Priest": "William Ledbetter"
+                            "role": "Second Priest",
+                            "artist": "William Ledbetter"
                         },
                         {
-                            "Tamino": "John Mc Veigh"
+                            "role": "Tamino",
+                            "artist": "John Mc Veigh"
                         },
                         {
-                            "Queen": "Amanda Pabyan"
+                            "role": "Queen",
+                            "artist": "Amanda Pabyan"
                         },
                         {
-                            "Speaker": "Sanford Sylvan"
+                            "role": "Speaker",
+                            "artist": "Sanford Sylvan"
                         }
                     ],
                     "id": "WAM-100",

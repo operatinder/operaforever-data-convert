@@ -229,8 +229,9 @@ class Performance(object):
             data['date'] = self.date
         if self.cast:
             data['cast'] = []
+            count = 0
             for r, a in self.cast.items():
-                data['cast'].append({r: a})
+                data['cast'].append({'role': r, 'artist': a})
         data['id'] = self.id
         data['recording'] = self.recording
         if self.segments:
